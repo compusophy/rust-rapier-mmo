@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["trunk", "rust-bin.stable.latest.default", "gcc", "caddy"]
+
+[phases.build]
+cmds = ["rustup target add wasm32-unknown-unknown", "trunk build --release"]
+
+[start]
+cmd = "caddy file-server --root dist --listen :$PORT"
