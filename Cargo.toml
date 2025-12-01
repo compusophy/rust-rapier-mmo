@@ -13,14 +13,17 @@ rand = "0.8"
 getrandom = { version = "0.3", features = ["wasm_js"] }
 # Pin uuid to 1.10.0 to avoid it pulling in getrandom 0.3 (if possible, but it might not matter now)
 uuid = { version = "=1.10.0", features = ["v4", "js"] }
-# Pin moxcms to 0.7.2 which is confirmed to use edition 2021
-moxcms = "=0.7.1"
-# Pin pxfm to 0.1.23 to avoid edition 2024 requirement in 0.1.26
-pxfm = "=0.1.23"
+# Explicitly depend on image 0.25.0 to hopefully use older moxcms
+image = "=0.25.0"
+# Pin moxcms to 0.4.0 
+moxcms = "=0.4.0"
+# Pin pxfm to 0.1.0
+pxfm = "=0.1.0"
 
 # Enable a small amount of optimization in debug mode
 [profile.dev]
 opt-level = 1
+
 
 # Enable high optimizations for dependencies (incl. Bevy), but not for our code:
 [profile.dev.package."*"]
