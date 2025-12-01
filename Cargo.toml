@@ -13,8 +13,8 @@ rand = "0.8"
 getrandom = { version = "0.3", features = ["wasm_js"] }
 # Pin uuid to 1.10.0 to avoid it pulling in getrandom 0.3 (if possible, but it might not matter now)
 uuid = { version = "=1.10.0", features = ["v4", "js"] }
-# Pin moxcms to 0.7.9 because 0.7.10 requires edition 2024 which breaks build on current stable
-moxcms = "=0.7.9"
+# Pin moxcms to 0.7.8 to avoid edition 2024 requirement in 0.7.9+
+moxcms = "=0.7.8"
 
 # Enable a small amount of optimization in debug mode
 [profile.dev]
