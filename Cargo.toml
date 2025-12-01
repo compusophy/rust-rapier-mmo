@@ -13,12 +13,8 @@ rand = "0.8"
 getrandom = { version = "0.3", features = ["wasm_js"] }
 # Pin uuid to 1.10.0 to avoid it pulling in getrandom 0.3 (if possible, but it might not matter now)
 uuid = { version = "=1.10.0", features = ["v4", "js"] }
-# Explicitly depend on image 0.25.0 to hopefully use older moxcms
-image = "=0.25.0"
-# Pin moxcms to 0.4.0 
-moxcms = "=0.4.0"
-# Pin pxfm to 0.1.0
-pxfm = "=0.1.0"
+# image 0.25.0 has dependency issues on stable. Bumping back to latest but will rely on Nightly.
+image = "0.25.5" 
 
 # Enable a small amount of optimization in debug mode
 [profile.dev]
