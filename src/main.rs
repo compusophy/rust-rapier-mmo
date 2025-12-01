@@ -160,7 +160,6 @@ fn spawn_units(mut commands: Commands, layout: Res<MapLayout>) {
         Queen,
         TargetPosition(queen_vec),
         Path::default(),
-        OriginalColor(queen_color),
     ));
 
     // Spawn Worker Ants
@@ -191,7 +190,6 @@ fn spawn_units(mut commands: Commands, layout: Res<MapLayout>) {
             Ant,
             TargetPosition(vec),
             Path::default(),
-            OriginalColor(worker_color),
         ));
     }
 }
